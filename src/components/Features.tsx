@@ -4,16 +4,16 @@ import BentoTilt from "./BentoTilt";
 
 const Features = () => {
   return (
-    <section className="bg-black pb-52">
+    <section id="projects" className="bg-black pb-52">
       <div className="container mx-auto px-3 mdLpx-10">
         <div className="px-5 py-32">
-          <p className="font-circular-web text-lg text-blue-50">
-            Into the Metagame Layer
+          <p className="font-circular-web text-2xl text-blue-50">
+            Enter My Development Layer
           </p>
-          <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-            Immerse yourself in a rich and ever-expanding universe where a
-            vibrant array of products converge into an interconnected overlay
-            experience on your world
+          <p className="max-w-md font-circular-web text-xl text-blue-50 opacity-50">
+            Explore a curated showcase of projects built with Three.js, Unity,
+            GSAP, Flutter, React, and NestJS — from immersive 3D experiences and
+            games to high-performance web and mobile applications.
           </p>
         </div>
 
@@ -22,10 +22,10 @@ const Features = () => {
             src="videos/feature-1.mp4"
             title={
               <>
-                radi<b>n</b>t
+                GS<b>A</b>P Motion Men<b>u</b>
               </>
             }
-            description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+            description="A dynamic, animation-driven menu experience built with GSAP for smooth, immersive user interaction."
           />
         </BentoTilt>
 
@@ -35,10 +35,10 @@ const Features = () => {
               src="videos/feature-2.mp4"
               title={
                 <>
-                  zig<b>m</b>a
+                  Pi<b>x</b>eleri<b>o</b>n
                 </>
               }
-              description="An anime and gaming-inspired NFT collection - the IP primed for expansion"
+              description="Pixelerion is my creative development agency — whether you need a website, mobile app, desktop software, or a complete digital solution, we're ready to build it for you."
             />
           </BentoTilt>
 
@@ -50,10 +50,10 @@ const Features = () => {
               src="videos/feature-3.mp4"
               title={
                 <>
-                  n<b>e</b>xus
+                  <b>T</b>hree <b>J</b>S Met<b>av</b>erse
                 </>
               }
-              description="A gamified  social hub, adding a new dimension of play to social interaction for Web3 communities."
+              description="Step into a 3D metaverse experience built with Three.js — explore, interact, and witness the future of web-based immersive worlds."
             />
           </BentoTilt>
 
@@ -62,18 +62,23 @@ const Features = () => {
               src="videos/feature-4.mp4"
               title={
                 <>
-                  az<b>u</b>l
+                  <b>U</b>nity De<b>v</b>elopmen<b>t</b>
                 </>
               }
-              description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+              description="Crafting immersive 2D and 3D games with Unity — from fun gameplay to interactive experiences that captivate players."
             />
           </BentoTilt>
 
           <div className="bento-tilt_2">
             <div className="flex size-full flex-col justify-between bg-violet-500 p-5">
               <h1 className="bento-title special-font max-w-64 text-black">
-                M<b>o</b>re co<b>m</b>ing s<b>o</b>on!
+                A<b>n</b>d a lo<b>t</b> m<b>o</b>re!
               </h1>
+              <p className="mt-3 max-w-64 text-xs md:text-base">
+                From interactive websites and mobile apps to 3D worlds,
+                AI-powered experiences, and secure software solutions, I bring
+                your ideas to life across every platform.
+              </p>
 
               <TiLocationArrow className="m-5 scale-[5] self-end" />
             </div>

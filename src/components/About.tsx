@@ -24,18 +24,21 @@ const About = () => {
   return (
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <h2 className="font-general text-sm uppercase md:text-[10px]">
-          Welcome to Zentry
+        <h2 className="font-general text-xl uppercase md:text-2xl">
+          Check out my stack
         </h2>
 
         <AnimatedTitle
-          title="Disc<b>o</b>ver the world's <br /> l<b>a</b>rgest shared adventure"
+          title="Discover architectures<br />built for real-world impact."
           containerClass="mt-5 text-center text-black! text-4xl uppercase leading-[0.8] md:text-[6rem]"
         />
 
         <div className="about-subtext">
-          <p>The Game of Games begins-your life, now an epic MMORPG</p>
-          <p>Zentry unites every player from countless games and platforms</p>
+          <p>You imagine it — I build it. Your vision becomes reality.</p>
+          <p>
+            Code that transforms ideas into impact and drives your business
+            forward.
+          </p>
         </div>
       </div>
 
