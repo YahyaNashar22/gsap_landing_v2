@@ -10,11 +10,11 @@ const Hero = () => {
   const [hasClicked, setHasClicked] = useState<boolean>(false);
   const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
-  const totalVideos = 3;
+  const totalVideos = 2;
   const previewVideoRef = useRef<HTMLVideoElement | null>(null);
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  const allLoaded = loadedVideos >= totalVideos;
+  const allLoaded = loadedVideos >= totalVideos - 1;
 
   const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     if (!e.currentTarget.dataset.loaded) {
@@ -90,7 +90,7 @@ const Hero = () => {
 
   return (
     <div id="resume" className="relative h-dvh w-screen overflow-x-hidden">
-      {allLoaded && <Loader />}
+      {!allLoaded && <Loader />}
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
