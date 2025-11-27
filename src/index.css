@@ -40,6 +40,18 @@ body {
   src: url("/fonts/zentry-regular.woff2") format("woff2");
 }
 
+.bento-title {
+  @apply text-4xl font-black uppercase font-zentry md:text-6xl;
+}
+
+.bento-tilt-1 {
+  @apply relative col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+}
+
+.bento-tilt-2 {
+  @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+}
+
 .border-hsla {
   border: 1px solid hsl(0 0% 100% / 0.2);
 }
