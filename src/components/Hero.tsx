@@ -3,24 +3,25 @@ import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Loader from "./Loader";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
-  // const [loadedVideos, setLoadedVideos] = useState<number>(0);
+  const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
   const totalVideos = 4;
   const previewVideoRef = useRef<HTMLVideoElement | null>(null);
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  // const allLoaded = loadedVideos >= totalVideos;
+  const allLoaded = loadedVideos >= totalVideos;
 
-  // const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-  //   if (!e.currentTarget.dataset.loaded) {
-  //     e.currentTarget.dataset.loaded = "true";
-  //     setLoadedVideos((prev) => prev + 1);
-  //   }
-  // };
+  const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    if (!e.currentTarget.dataset.loaded) {
+      e.currentTarget.dataset.loaded = "true";
+      setLoadedVideos((prev) => prev + 1);
+    }
+  };
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
   const handleMiniVdClick = () => {
@@ -89,15 +90,7 @@ const Hero = () => {
 
   return (
     <div id="resume" className="relative h-dvh w-screen overflow-x-hidden">
-      {/* {allLoaded && (
-        <div className="flex-center absolute z-100 h-dvh w-screen overflow-hidden bg-violet-50">
-          <div className="three-body">
-            <div className="three-body__dot" />
-            <div className="three-body__dot" />
-            <div className="three-body__dot" />
-          </div>
-        </div>
-      )} */}
+      {allLoaded && <Loader />}
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
@@ -115,7 +108,7 @@ const Hero = () => {
                 muted
                 id="current-video"
                 className="size-64 origin-center object-cover object-center scale-150"
-                // onLoadedData={handleVideoLoad}
+                onLoadedData={handleVideoLoad}
               />
             </div>
           </div>
