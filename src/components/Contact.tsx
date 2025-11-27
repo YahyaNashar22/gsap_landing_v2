@@ -43,7 +43,7 @@ const Contact = () => {
 
           <Button
             id="contact-us"
-            title="contact us"
+            title="contact me"
             onClick={handleContactClick}
             containerClass="mt-10 cursor-pointer hover:bg-violet-500 hover:text-white ease-in-out duration-300 hover:scale-150"
           />
