@@ -5,6 +5,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "./Loader";
 
+import hero1 from "../assets/hero-1.mp4";
+import hero2 from "../assets/hero-2.mp4";
+import hero3 from "../assets/hero-3.mp4";
+import hero4 from "../assets/hero-4.mp4";
+
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
@@ -30,7 +35,13 @@ const Hero = () => {
     setCurrentIndex(upcomingVideoIndex);
   };
 
-  const getVideoSrc = (index: number) => `videos/hero-${index}.mp4`;
+  const importedVideos = [hero1, hero2, hero3, hero4];
+  const videoSources =
+    importedVideos && importedVideos.length === totalVideos
+      ? importedVideos
+      : Array.from({ length: totalVideos }, (_, i) => `videos/hero-${i + 1}.mp4`);
+
+  const getVideoSrc = (index: number) => videoSources[index - 1];
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -105,6 +116,7 @@ const Hero = () => {
               <video
                 ref={previewVideoRef}
                 src={getVideoSrc(upcomingVideoIndex)}
+                preload="auto"
                 loop
                 muted
                 id="current-video"
@@ -117,6 +129,7 @@ const Hero = () => {
           <video
             ref={nextVideoRef}
             src={getVideoSrc(currentIndex)}
+            preload="auto"
             loop
             muted
             id="next-video"
@@ -126,6 +139,7 @@ const Hero = () => {
 
           <video
             src={getVideoSrc(currentIndex)}
+            preload="auto"
             autoPlay
             loop
             muted
