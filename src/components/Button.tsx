@@ -6,6 +6,7 @@ interface IButtonProps {
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   containerClass: string;
+  onClick?: () => void;
 }
 const Button = ({
   id,
@@ -13,10 +14,12 @@ const Button = ({
   leftIcon,
   rightIcon,
   containerClass,
+  onClick,
 }: IButtonProps) => {
   return (
     <button
       id={id}
+      onClick={onClick}
       className={`group relative z-10 w-fit cursor-pointer overflow-hidden rounded-full bg-violet-50 px-7 py-3 text-black ${containerClass}`}
     >
       {leftIcon}

@@ -31,6 +31,15 @@ const Hero = () => {
 
   const getVideoSrc = (index: number) => `videos/hero-${index}.mp4`;
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/cv.pdf";
+    link.download = "Yahya Nashar Full Stack Engineer.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useGSAP(
     () => {
       if (hasClicked) {
@@ -129,28 +138,29 @@ const Hero = () => {
           />
         </div>
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-50">
-          G<b>a</b>ming
+          S<b>o</b>ftwar<b>e</b> <br /> <b>E</b>ngin<b>ee</b>r
         </h1>
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-25 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100">
-              redefi<b>n</b>e
+              Y<b>a</b>h<b>y</b>a <br /> N<b>a</b>sh<b>a</b>r
             </h1>
 
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Enter the Metagame Layer <br /> Unleash the Play Economy
+              Building Innovative Solutions <br /> for a Digital Future
             </p>
             <Button
-              id="watch-trailer"
-              title="Watch Trailer"
+              id="download-resume"
+              title="Download Resume"
               leftIcon={<TiLocationArrow />}
               containerClass="bg-yellow-300! flex-center gap-1 hover:bg-white! ease-in-out duration-300 hover:-translate-y-3"
+              onClick={handleDownload}
             />
           </div>
         </div>
       </div>
       <h1 className="special-font hero-heading absolute bottom-5 right-5  text-black">
-        G<b>a</b>ming
+        S<b>o</b>ftwar<b>e</b> <br /> <b>E</b>ngin<b>ee</b>r
       </h1>
     </div>
   );
