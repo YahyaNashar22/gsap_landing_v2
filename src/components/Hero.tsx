@@ -5,21 +5,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "./Loader";
 
-import hero1 from "../assets/hero-1.mp4";
-import hero2 from "../assets/hero-2.mp4";
-import hero3 from "../assets/hero-3.mp4";
-import hero4 from "../assets/hero-4.mp4";
-
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
   const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
-  const totalVideos = 4;
+  const totalVideos = 3;
   const previewVideoRef = useRef<HTMLVideoElement | null>(null);
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  const allLoaded = loadedVideos >= totalVideos - 1;
+  const allLoaded = loadedVideos >= totalVideos;
 
   const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     if (!e.currentTarget.dataset.loaded) {
@@ -35,13 +30,7 @@ const Hero = () => {
     setCurrentIndex(upcomingVideoIndex);
   };
 
-  const importedVideos = [hero1, hero2, hero3, hero4];
-  const videoSources =
-    importedVideos && importedVideos.length === totalVideos
-      ? importedVideos
-      : Array.from({ length: totalVideos }, (_, i) => `videos/hero-${i + 1}.mp4`);
-
-  const getVideoSrc = (index: number) => videoSources[index - 1];
+  const getVideoSrc = (index: number) => `videos/hero-${index}.mp4`;
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -99,10 +88,9 @@ const Hero = () => {
     });
   });
 
-  console.log(loadedVideos);
   return (
     <div id="resume" className="relative h-dvh w-screen overflow-x-hidden">
-      {!allLoaded && <Loader />}
+      {allLoaded && <Loader />}
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
@@ -116,7 +104,6 @@ const Hero = () => {
               <video
                 ref={previewVideoRef}
                 src={getVideoSrc(upcomingVideoIndex)}
-                preload="auto"
                 loop
                 muted
                 id="current-video"
@@ -129,22 +116,18 @@ const Hero = () => {
           <video
             ref={nextVideoRef}
             src={getVideoSrc(currentIndex)}
-            preload="auto"
             loop
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={handleVideoLoad}
           />
 
           <video
             src={getVideoSrc(currentIndex)}
-            preload="auto"
             autoPlay
             loop
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
-            onLoadedData={handleVideoLoad}
           />
         </div>
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-50">
