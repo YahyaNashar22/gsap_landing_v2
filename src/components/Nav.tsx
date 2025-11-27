@@ -17,6 +17,16 @@ const Nav = () => {
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
 
+  const handleGithubNavigation = () => {
+    const link = document.createElement("a");
+    link.href = "https://github.com/YahyaNashar22";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
@@ -64,8 +74,9 @@ const Nav = () => {
             <img src="/img/logo.png" alt="logo" className="w-10" />
 
             <Button
-              id="product-button"
-              title="Products"
+              id="github-button"
+              title="Github"
+              onClick={handleGithubNavigation}
               rightIcon={<TiLocationArrow />}
               containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1 hover:bg-yellow-300! ease-in-out duration-300 hover:translate-x-5"
             />
