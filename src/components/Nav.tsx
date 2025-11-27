@@ -67,7 +67,7 @@ const Nav = () => {
               id="product-button"
               title="Products"
               rightIcon={<TiLocationArrow />}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1 hover:bg-yellow-300! ease-in-out duration-300 hover:translate-x-5"
             />
           </div>
 

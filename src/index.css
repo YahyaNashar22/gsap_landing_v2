@@ -64,7 +64,7 @@ body {
   position: relative;
   margin-inline-start: 2.5rem;
   font-family: var(--font-general);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   color: rgb(239, 246, 255);
   cursor: pointer;
@@ -192,7 +192,7 @@ body {
 }
 
 .gallery-img-container {
-  @apply size-64 overflow-hidden bg-violet-300;
+  @apply size-64 overflow-hidden bg-violet-500;
 }
 
 .gallery-img {

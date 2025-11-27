@@ -39,7 +39,7 @@ const Contact = () => {
           <Button
             id="contact-us"
             title="contact us"
-            containerClass="mt-10 cursor-pointer"
+            containerClass="mt-10 cursor-pointer hover:bg-violet-500 hover:text-white ease-in-out duration-300"
           />
         </div>
       </div>
