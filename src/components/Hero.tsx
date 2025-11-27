@@ -7,11 +7,11 @@ import gsap from "gsap";
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
   const totalVideos = 4;
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
+  const allLoaded = loadedVideos >= totalVideos;
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -55,8 +55,36 @@ const Hero = () => {
     { dependencies: [currentIndex], revertOnUpdate: true }
   );
 
+  useGSAP(() => {
+    gsap.set("#video-frame", {
+      clipPath: "polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)",
+      borderRadius: "0 0 40% 10%",
+    });
+
+    gsap.from("#video-frame", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      borderRadius: "0 0 0 0",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#video-frame",
+        start: "center center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
+      {allLoaded && (
+        <div className="flex-center absolute z-100 h-dvh w-screen overflow-hidden bg-violet-50">
+          <div className="three-body">
+            <div className="three-body__dot" />
+            <div className="three-body__dot" />
+            <div className="three-body__dot" />
+          </div>
+        </div>
+      )}
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
