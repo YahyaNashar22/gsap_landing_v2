@@ -14,7 +14,7 @@ const Hero = () => {
   const previewVideoRef = useRef<HTMLVideoElement | null>(null);
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  const allLoaded = loadedVideos >= totalVideos;
+  const allLoaded = loadedVideos >= totalVideos - 1;
 
   const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     if (!e.currentTarget.dataset.loaded) {
@@ -88,9 +88,10 @@ const Hero = () => {
     });
   });
 
+  console.log(loadedVideos);
   return (
     <div id="resume" className="relative h-dvh w-screen overflow-x-hidden">
-      {allLoaded && <Loader />}
+      {!allLoaded && <Loader />}
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
@@ -120,6 +121,7 @@ const Hero = () => {
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+            onLoadedData={handleVideoLoad}
           />
 
           <video
@@ -128,6 +130,7 @@ const Hero = () => {
             loop
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
+            onLoadedData={handleVideoLoad}
           />
         </div>
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-50">
