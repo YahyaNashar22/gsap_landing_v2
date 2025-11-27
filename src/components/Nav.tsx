@@ -4,7 +4,7 @@ import Button from "./Button";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 
-const navItems = ["Resume", "About", "Projects", "Contact"];
+const navItems = ["Resume", "About", "Projects", "Experience", "Contact"];
 
 const Nav = () => {
   const { y: currentScrollY } = useWindowScroll();
