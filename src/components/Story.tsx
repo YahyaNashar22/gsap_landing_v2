@@ -3,9 +3,20 @@ import AnimatedTitle from "./AnimatedTitle";
 import gsap from "gsap";
 import RoundedCorners from "./RoundedCorners";
 import Button from "./Button";
+import { TiLocationArrow } from "react-icons/ti";
 
 const Story = () => {
   const frameRef = useRef<HTMLImageElement | null>(null);
+
+  const handleLinkedInNavigation = () => {
+    const link = document.createElement("a");
+    link.href = "https://www.linkedin.com/in/yahya-nashar-693456297/";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const handleMouseLeave = () => {
     const element = frameRef.current;
@@ -45,13 +56,13 @@ const Story = () => {
   return (
     <section id="story" className="min-h-dvh w-screen bg-black text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
-        <p className="font-general text-sm uppercase md:text-[10px]">
-          the multiversal ip world
+        <p className="font-general text-xl uppercase md:text-2xl">
+          My Professional Journey
         </p>
 
         <div className="relative size-full">
           <AnimatedTitle
-            title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
+            title="Experience, <br /> Skills & Projects"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
@@ -78,14 +89,19 @@ const Story = () => {
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-              Where realms converge, lies Zentry and the boundless pillar.
-              Discover its secrets and shape your fate amidst infinite
-              opportunities.
+              I've led and contributed to a variety of enterprise-level
+              projects, ranging from e-commerce and FinTech to large-scale
+              systems. Experienced in microservices architecture, AWS
+              deployments, testing, and cybersecurity, I've worked across
+              multiple tech stacks and served as team lead or head programmer
+              for numerous companies.
             </p>
             <Button
-              id="realm-button"
-              title="Discover Prologue"
-              containerClass="mt-5 hover:bg-violet-500 hover:text-white ease-in-out duration-300"
+              id="linkedin-button"
+              onClick={handleLinkedInNavigation}
+              title="Check My LinkedIn"
+              rightIcon={<TiLocationArrow />}
+              containerClass="flex justify-items items-center gap-1 mt-5 hover:bg-violet-500 hover:text-white ease-in-out duration-300 hover:translate-x-10"
             />
           </div>
         </div>
