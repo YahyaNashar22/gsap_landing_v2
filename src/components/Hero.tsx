@@ -10,13 +10,17 @@ const Hero = () => {
   const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
   const totalVideos = 4;
+  const previewVideoRef = useRef<HTMLVideoElement | null>(null);
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
+
   const allLoaded = loadedVideos >= totalVideos;
 
-  const handleVideoLoad = () => {
-    setLoadedVideos((prev) => prev + 1);
+  const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    if (!e.currentTarget.dataset.loaded) {
+      e.currentTarget.dataset.loaded = "true";
+      setLoadedVideos((prev) => prev + 1);
+    }
   };
-
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
   const handleMiniVdClick = () => {
@@ -96,7 +100,7 @@ const Hero = () => {
               className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
             >
               <video
-                ref={nextVideoRef}
+                ref={previewVideoRef}
                 src={getVideoSrc(upcomingVideoIndex)}
                 loop
                 muted

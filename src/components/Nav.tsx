@@ -73,8 +73,12 @@ const Nav = () => {
 
           <div className="flex h-full items-center">
             <div className="hidden md:block">
-              {navItems.map((item) => (
-                <a className="nav-hover-btn" href={`#${item.toLowerCase()}`}>
+              {navItems.map((item, index) => (
+                <a
+                  key={index}
+                  className="nav-hover-btn"
+                  href={`#${item.toLowerCase()}`}
+                >
                   {item}
                 </a>
               ))}
