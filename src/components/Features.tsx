@@ -80,7 +80,14 @@ const Features = () => {
           </div>
 
           <div className="bento-tilt-2">
-            <video src="videos/feature-5.mp4" loop muted autoPlay className="size-full object-cover object-center" />
+            <div className="absolute inset-0	bg-black/10 bg-linear-to-b from-black/40 via-black/60 to-black/40" />
+            <video
+              src="videos/feature-5.mp4"
+              loop
+              muted
+              autoPlay
+              className="size-full object-cover object-center"
+            />
           </div>
         </div>
       </div>
