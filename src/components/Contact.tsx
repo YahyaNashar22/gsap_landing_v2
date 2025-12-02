@@ -1,9 +1,9 @@
 import Button from "./Button";
 import ImageClipBox from "./ImageClipBox";
 
-import contact1 from "../assets/img/contact-1.jpg";
-import contact2 from "../assets/img/contact-2.jpg";
-import swordman from "../assets/img/swordman.png";
+import contact1 from "../assets/img/contact-1.webp";
+import contact2 from "../assets/img/contact-2.webp";
+import swordman from "../assets/img/swordman.webp";
 
 const Contact = () => {
   const handleContactClick = () => {

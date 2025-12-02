@@ -4,8 +4,8 @@ import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import video1 from "../assets/videos/hero-1.mp4";
-import video2 from "../assets/videos/hero-2.mp4";
+import video1 from "../assets/videos/hero-1.webm";
+import video2 from "../assets/videos/hero-2.webm";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);

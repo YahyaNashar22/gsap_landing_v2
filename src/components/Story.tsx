@@ -5,7 +5,7 @@ import RoundedCorners from "./RoundedCorners";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 
-import entrance from "../assets/img/entrance.jpg";
+import entrance from "../assets/img/entrance.webp";
 
 const Story = () => {
   const frameRef = useRef<HTMLImageElement | null>(null);

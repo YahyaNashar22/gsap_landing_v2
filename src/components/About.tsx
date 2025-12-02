@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import AnimatedTitle from "./AnimatedTitle";
 
-import aboutImg from "../assets/img/about.png";
+import aboutImg from "../assets/img/about.webp";
 
 const About = () => {
   useGSAP(() => {

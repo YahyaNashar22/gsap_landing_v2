@@ -2,11 +2,11 @@ import { TiLocationArrow } from "react-icons/ti";
 import BentoCard from "./BentoCard";
 import BentoTilt from "./BentoTilt";
 
-import feature1 from "../assets/videos/feature-1.mp4";
-import feature2 from "../assets/videos/feature-2.mp4";
-import feature3 from "../assets/videos/feature-3.mp4";
-import feature4 from "../assets/videos/feature-4.mp4";
-import feature5 from "../assets/videos/feature-5.mp4";
+import feature1 from "../assets/videos/feature-1.webm";
+import feature2 from "../assets/videos/feature-2.webm";
+import feature3 from "../assets/videos/feature-3.webm";
+import feature4 from "../assets/videos/feature-4.webm";
+import feature5 from "../assets/videos/feature-5.webm";
 
 const Features = () => {
   return (
