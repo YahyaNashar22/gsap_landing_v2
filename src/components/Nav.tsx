@@ -4,18 +4,13 @@ import Button from "./Button";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 
-import audio from "../assets/audio/loop.m4a";
-
 const navItems = ["Resume", "About", "Projects", "Experience", "Contact"];
 
 const Nav = () => {
   const { y: currentScrollY } = useWindowScroll();
 
   const navContainerRef = useRef<HTMLDivElement | null>(null);
-  const audioElementRef = useRef<HTMLAudioElement | null>(null);
 
-  const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState<boolean>(false);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
 
@@ -28,19 +23,6 @@ const Nav = () => {
     link.click();
     document.body.removeChild(link);
   };
-
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioElementRef.current!.play();
-    } else {
-      audioElementRef.current!.pause();
-    }
-  }, [isAudioPlaying]);
 
   useEffect(() => {
     if (currentScrollY === 0) {
@@ -96,24 +78,6 @@ const Nav = () => {
                 </a>
               ))}
             </div>
-
-            <button
-              className="ml-10 flex items-center space-x-0.5"
-              onClick={toggleAudioIndicator}
-            >
-              <audio ref={audioElementRef} className="hidden" src={audio} />
-              {[1, 2, 3].map((bar) => (
-                <div
-                  key={bar}
-                  className={`indicator-line ${
-                    isIndicatorActive ? "active" : ""
-                  }`}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
           </div>
         </nav>
       </header>
