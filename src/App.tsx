@@ -63,15 +63,20 @@ const App = () => {
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
-      {loading && <Loader progress={progress} />}
-      <AudioPlayer />
-      <Nav />
-      <Hero />
-      <About />
-      <Features />
-      <Story />
-      <Contact />
-      <Footer />
+      {loading ? (
+        <Loader progress={progress} />
+      ) : (
+        <>
+          <AudioPlayer />
+          <Nav />
+          <Hero />
+          <About />
+          <Features />
+          <Story />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </main>
   );
 };
