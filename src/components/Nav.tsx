@@ -4,6 +4,8 @@ import Button from "./Button";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 
+import audio from "../assets/audio/loop.m4a";
+
 const navItems = ["Resume", "About", "Projects", "Experience", "Contact"];
 
 const Nav = () => {
@@ -99,11 +101,7 @@ const Nav = () => {
               className="ml-10 flex items-center space-x-0.5"
               onClick={toggleAudioIndicator}
             >
-              <audio
-                ref={audioElementRef}
-                className="hidden"
-                src="/audio/loop.m4a"
-              />
+              <audio ref={audioElementRef} className="hidden" src={audio} />
               {[1, 2, 3].map((bar) => (
                 <div
                   key={bar}

@@ -5,6 +5,8 @@ import RoundedCorners from "./RoundedCorners";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 
+import entrance from "../assets/img/entrance.jpg";
+
 const Story = () => {
   const frameRef = useRef<HTMLImageElement | null>(null);
 
@@ -54,7 +56,10 @@ const Story = () => {
     });
   };
   return (
-    <section id="experience" className="min-h-dvh w-screen bg-black text-blue-50">
+    <section
+      id="experience"
+      className="min-h-dvh w-screen bg-black text-blue-50"
+    >
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-xl uppercase md:text-2xl">
           My Professional Journey
@@ -75,7 +80,7 @@ const Story = () => {
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
                   onMouseMove={handleMouseMove}
-                  src="/img/entrance.jpg"
+                  src={entrance}
                   alt="entrance"
                   className="object-contain"
                 />

@@ -5,6 +5,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "./Loader";
 
+import video1 from "../assets/videos/hero-1.mp4";
+import video2 from "../assets/videos/hero-2.mp4";
+
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
@@ -30,7 +33,7 @@ const Hero = () => {
     setCurrentIndex(upcomingVideoIndex);
   };
 
-  const getVideoSrc = (index: number) => `videos/hero-${index}.mp4`;
+  const getVideoSrc = (index: number) => (index == 1 ? video1 : video2);
 
   const handleDownload = () => {
     const link = document.createElement("a");

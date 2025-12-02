@@ -2,6 +2,12 @@ import { TiLocationArrow } from "react-icons/ti";
 import BentoCard from "./BentoCard";
 import BentoTilt from "./BentoTilt";
 
+import feature1 from "../assets/videos/feature-1.mp4";
+import feature2 from "../assets/videos/feature-2.mp4";
+import feature3 from "../assets/videos/feature-3.mp4";
+import feature4 from "../assets/videos/feature-4.mp4";
+import feature5 from "../assets/videos/feature-5.mp4";
+
 const Features = () => {
   return (
     <section id="projects" className="bg-black pb-52">
@@ -19,7 +25,7 @@ const Features = () => {
 
         <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
           <BentoCard
-            src="videos/feature-1.mp4"
+            src={feature1}
             title={
               <>
                 GS<b>A</b>P Motion Men<b>u</b>
@@ -32,7 +38,7 @@ const Features = () => {
         <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
           <BentoTilt className="bento-tilt_1 border-hsla col-span-2 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
-              src="videos/feature-2.mp4"
+              src={feature2}
               title={
                 <>
                   Pi<b>x</b>eleri<b>o</b>n
@@ -47,7 +53,7 @@ const Features = () => {
           col-span-2 row-span-1 ms-32 md:col-span-1 md:ms-0"
           >
             <BentoCard
-              src="videos/feature-3.mp4"
+              src={feature3}
               title={
                 <>
                   <b>T</b>hree <b>J</b>S Met<b>av</b>erse
@@ -59,7 +65,7 @@ const Features = () => {
 
           <BentoTilt className="bento-tilt_1 border-hsla col-span-2 me-14 md:col-span-1 md:me-0">
             <BentoCard
-              src="videos/feature-4.mp4"
+              src={feature4}
               title={
                 <>
                   <b>U</b>nity De<b>v</b>elopmen<b>t</b>
@@ -87,7 +93,7 @@ const Features = () => {
           <div className="bento-tilt-2">
             <div className="absolute inset-0	bg-black/10 bg-linear-to-b from-black/40 via-black/60 to-black/40" />
             <video
-              src="videos/feature-5.mp4"
+              src={feature5}
               loop
               muted
               autoPlay
